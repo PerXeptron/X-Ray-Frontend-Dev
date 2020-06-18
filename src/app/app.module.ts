@@ -45,6 +45,7 @@ import { ProfileComponent } from './profile/profile.component';
       {path:'success',component:SuccessComponent},
       {path:'logresult',component:LogresultComponent},
 {path:'profile',component:ProfileComponent},
+
       
     ]),
   ],

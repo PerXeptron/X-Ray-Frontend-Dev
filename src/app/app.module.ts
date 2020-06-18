@@ -17,6 +17,7 @@ import { LogresultComponent } from './logresult/logresult.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { ProfileComponent } from './profile/profile.component';
     SuccessComponent,
     LogresultComponent,
     ProfileComponent,
+    
     
     
   ],
@@ -45,6 +47,7 @@ import { ProfileComponent } from './profile/profile.component';
       {path:'success',component:SuccessComponent},
       {path:'logresult',component:LogresultComponent},
 {path:'profile',component:ProfileComponent},
+
 
       
     ]),

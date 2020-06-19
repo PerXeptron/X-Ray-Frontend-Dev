@@ -2,7 +2,7 @@
 <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" /></head>
 
 <mat-toolbar style="height: 95px;"><img src="https://i.ibb.co/GsMgSp2/logo1.png" style="margin:auto;height:80px">
-    <button class="button button2" style="margin:auto;"onclick="window.location.href='/home'"><a >Hom</a>e</button></mat-toolbar>
+    <button class="button button2" style="margin:auto;"onclick="window.location.href='/home'"><a >Home</a></button></mat-toolbar>
 
 <div class="card-container">
     <div class="card" style="border-radius: 4px;
@@ -20,8 +20,15 @@
     line-height: 20px;">
     <h1 style="font-size: 40px;">Login</h1><br><br><br>
     <label for="username"><h2>Username</h2></label>
-<input type="text" formControlName="username" class="form-control" method="get" /><br><br><br>
-<label for="password"><h2>Password</h2></label>
-<input type="password" formControlName="username" class="form-control" method="get" /><button class="button button2" style="margin:auto;" onclick="window.location.href='/success'">Submit</button><button class="button button2" onclick="window.location.href='/register'"style="margin:auto" >Register Now</button></div>
+    <input type="text" [(ngModel)]="input.username" placeholder="Username" required><br>
+    <input [(ngModel)]="input.password" type="password" placeholder="Password" required><br>
+
+    <!--<input type="text" formControlName="username" class="form-control" method="get" /><br><br><br>
+    <label for="password"><h2>Password</h2></label>
+    <input type="password" formControlName="username" class="form-control" method="get" />-->
+    
+    <button class="button button2" style="margin:auto;" (click)="loginNewUser()">Submit</button><br>
+    <h2>Don't have an account at PerXeptron ?</h2>
+    <button class="button button2" onclick="window.location.href='/register'"style="margin:auto" >Register Now</button></div>
 
 </div>

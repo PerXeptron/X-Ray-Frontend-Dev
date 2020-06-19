@@ -19,12 +19,19 @@
     transition: all 0.2s ease-in-out;
     line-height: 20px;">
     <h1 style="font-size: 40px;">Register</h1><br><br><br>
-    <label for="username"><h2>New Username</h2></label>
-<input type="text" formControlName="username" class="form-control" method="get" /><br><br><br>
+<label for="username"><h2>New Username</h2></label>
+<input type="text" [(ngModel)]="register.username" placeholder="Username" required><br>
+<label for="password"><h2>Password</h2></label>
+<input [(ngModel)]="register.password" type="password" placeholder="Password" required><br>
+<label for="password"><h2>Confirm Password</h2></label>
+<input [(ngModel)]="register.password2" type="password" placeholder="Confirm Password" required><br>
+
+<!--<input type="text" formControlName="username" class="form-control" method="get" /><br><br><br>
 <label for="password"><h2>Password</h2></label>
 <input type="password" formControlName="username" class="form-control" method="get" /><br><br><br>
 <label for="password"><h2>Confirm Password</h2></label>
-<input type="password" formControlName="username" class="form-control" method="get" /><button onclick="window.location.href='/login'"  class="button button2" style="margin:auto;;">Submit</button></div>
+<input type="password" formControlName="username" class="form-control" method="get" />-->
+<button (click)="registerNewUser()"  class="button button2" style="margin:auto;;">Submit</button></div>
 
 </div>
 

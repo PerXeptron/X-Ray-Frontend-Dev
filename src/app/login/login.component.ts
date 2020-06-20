@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 
 import { Router } from '@angular/router';
-import { StoreuserService } from '../storeUser.service';
+import { TokenManager } from '../tokenmanager.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private userService: UserService,
-    private storeUserService: StoreuserService
+    private tokenManager: TokenManager,
   ) { }
 
   ngOnInit(): void {
@@ -27,12 +27,12 @@ export class LoginComponent implements OnInit {
   }
 
   loginNewUser(){
-    this.userService.loginUser(this.input).subscribe(            
+    this.userService.loginUser(this.input).subscribe(
         response => {
-            this.storeUserService.crnttokenkey = response.token;
-            this.storeUserService.crntauthenticuser = response.userid;
+            this.tokenManager.addNewToken(response.token, response.userid);
+            //this.storeUserService.crntauthenticuser = response.userid;
             alert('User ' + response.username + ' has been logged in')
-            this.router.navigate(['/users', this.storeUserService.crntauthenticuser]);
+            this.router.navigate(['/users', this.tokenManager.retrieveToken().userid]);
         },
         error => {
           console.log(error.error.non_field_errors);

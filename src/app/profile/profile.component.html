@@ -5,7 +5,7 @@
 
 <mat-toolbar style="height: 95px;"><img src="https://i.ibb.co/GsMgSp2/logo1.png" style="margin:auto;height:80px">
     <button class="button button2" (click) = "uploadWindow()" style="margin:auto;">Upload</button>
-    <button class="button button2" onclick="window.location.href='/home'"  style="margin:auto;">Logout</button></mat-toolbar>
+    <button class="button button2" (click)="logout()"  style="margin:auto;">Logout</button></mat-toolbar>
    
 <div class="card-container">
     <div class="card" style="border-radius: 4px;
@@ -23,6 +23,8 @@
     transition: all 0.2s ease-in-out;
     line-height: 20px;">
     <h1 style="font-size: 40px;">My Profile</h1><br><br><h1 style="font-size: 40px;">{{ userinfo.username }}</h1><br></div>
+    
+<div class="Users" *ngFor="let xray of pastxraydetails">
     <div class="card" style="border-radius: 4px;
     border: 1px solid #eee;
     background-color: #fafafa;
@@ -37,9 +39,10 @@
     transition: all 0.2s ease-in-out;
     line-height: 20px;">
     <!--URL FOR ACCESSING IMAGES : "{{'http://127.0.0.1:8000' + pastxraydetails[i].image }}"-->
-    <img src= "{{'http://127.0.0.1:8000' + pastxraydetails[0].image }}" width="64" height="64">
+    <img src= "{{'http://127.0.0.1:8000' + xray.image }}" width="64" height="64">
     </div>
-
+</div>
+<!--
     <div class="card" style="border-radius: 4px;
     border: 1px solid #eee;
     background-color: #fafafa;
@@ -68,13 +71,4 @@
     transition: all 0.2s ease-in-out;
     line-height: 20px;">
     data 1</div>
-    
-
-    
-
-
-
-
-
-
-
+-->

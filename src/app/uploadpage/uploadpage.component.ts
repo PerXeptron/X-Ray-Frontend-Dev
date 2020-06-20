@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, provideRoutes, Router } from '@angular/router';
 
 import { UserService } from '../user.service';
-import { StoreuserService } from '../storeUser.service';
 import { XrayService } from '../xray.service';
+import { TokenManager } from '../tokenmanager.service';
 
 @Component({
   selector: 'app-uploadpage',
@@ -25,9 +25,9 @@ export class UploadpageComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private xrayService: XrayService,
-    private storeuserService: StoreuserService,
+    private tokenManager: TokenManager,
   ) { 
-      this.crntauthenticuser = this.storeuserService.getcrntuserid();
+      this.crntauthenticuser = this.tokenManager.retrieveToken().userid;
   }
 
   ngOnInit(): void {
@@ -67,7 +67,7 @@ export class UploadpageComponent implements OnInit {
       formData.append('title', "Chest-X-Ray");
       formData.append('image', this.fileToUpload); 
 
-    this.xrayService.uploadXRay(this.storeuserService.crnttokenkey, formData).subscribe(
+    this.xrayService.uploadXRay(this.tokenManager.retrieveToken().token, formData).subscribe(
       response => {
         this.predictionData = response;
         console.log(response);

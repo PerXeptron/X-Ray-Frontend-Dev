@@ -6,8 +6,6 @@ const routes: Routes = [];
 
 import { UserService } from './user.service';
 
-import { StoreuserService } from './storeUser.service';
-
 import { XrayService } from './xray.service';
 
 import { AnonuploadComponent } from './anonupload/anonupload.component';

@@ -10,12 +10,9 @@ import { FormsModule } from '@angular/forms';
 
 
 import { HttpClientModule } from '@angular/common/http';
-import { ResultspageComponent } from './resultspage/resultspage.component';
 import { UploadpageComponent } from './uploadpage/uploadpage.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { SuccessComponent } from './success/success.component';
-import { LogresultComponent } from './logresult/logresult.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserService } from './user.service';
 import { AnonuploadComponent } from './anonupload/anonupload.component';
@@ -26,12 +23,9 @@ import { AnonuploadComponent } from './anonupload/anonupload.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    ResultspageComponent,
     UploadpageComponent,
     LoginComponent,
     RegisterComponent,
-    SuccessComponent,
-    LogresultComponent,
     ProfileComponent,
     AnonuploadComponent,
     
@@ -48,11 +42,8 @@ import { AnonuploadComponent } from './anonupload/anonupload.component';
       {path:'home',component:HomeComponent},
       {path:'anonupload',component:AnonuploadComponent},
       {path:'users/:userId/upload',component:UploadpageComponent},
-      {path:'result', component:ResultspageComponent},
       {path:'login',component:LoginComponent},
       {path:'register',component:RegisterComponent},
-      {path:'success',component:SuccessComponent},
-      {path:'logresult',component:LogresultComponent},
       {path:'users/:userId', component: ProfileComponent},
 
 

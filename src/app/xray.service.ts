@@ -30,4 +30,8 @@ export class XrayService {
         };
         return this.http.post('http://127.0.0.1:8000/api/chexray/upload/', formData, httpOptions);
     }
+
+    anonUploadXRay(formData): Observable<any> {
+        return this.http.post('http://127.0.0.1:8000/api/chexray/anonupload/', formData);
+    }
 }

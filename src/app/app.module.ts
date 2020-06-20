@@ -18,6 +18,7 @@ import { SuccessComponent } from './success/success.component';
 import { LogresultComponent } from './logresult/logresult.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserService } from './user.service';
+import { AnonuploadComponent } from './anonupload/anonupload.component';
 
 
 
@@ -32,6 +33,7 @@ import { UserService } from './user.service';
     SuccessComponent,
     LogresultComponent,
     ProfileComponent,
+    AnonuploadComponent,
     
     
     
@@ -44,6 +46,7 @@ import { UserService } from './user.service';
     MatToolbarModule,HttpClientModule,
     RouterModule.forRoot([
       {path:'home',component:HomeComponent},
+      {path:'anonupload',component:AnonuploadComponent},
       {path:'users/:userId/upload',component:UploadpageComponent},
       {path:'result', component:ResultspageComponent},
       {path:'login',component:LoginComponent},

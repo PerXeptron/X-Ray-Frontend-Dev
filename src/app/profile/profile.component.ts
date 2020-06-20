@@ -59,4 +59,8 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  uploadWindow(){
+    this.router.navigate(['/users', this.crntauthenticuser, 'upload']);
+  }
+
 }

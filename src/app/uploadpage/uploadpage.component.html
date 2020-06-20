@@ -1,12 +1,52 @@
 
-<mat-toolbar style="height: 95px;"><img src="https://i.ibb.co/GsMgSp2/logo1.png" style="margin:auto;height:80px">
-    <button class="button button2" onclick="window.location.href='/home'"style="margin:auto;">Home</button></mat-toolbar>
-    <div class="card" style="
-        border-radius: 4px;
+<div *ngIf="registerView == 'uploadView'">
+    <mat-toolbar style="height: 95px;"><img src="https://i.ibb.co/GsMgSp2/logo1.png" style="margin:auto;height:80px">
+        <button class="button button2" (click)="goProfile()" style="margin:auto;">Go Back</button>
+        <button class="button button2" onclick="window.location.href='/home'"style="margin:auto;">Home</button></mat-toolbar>
+        <div class="card" style="
+            border-radius: 4px;
+            border: 1px solid #eee;
+            background-color: #fafafa;
+            height: 500px;
+            width: 70%;
+            margin: 0 8px 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s ease-in-out;
+            line-height: 24px;
+            margin:auto;">
+            
+            <h1>Upload your XRay file </h1>
+            Please choose your x ray file to be uploaded.
+            Please upload the file in .JPG, .PNG or .JPEG .
+            <br><br>
+                <form method="GET">
+                    <img [src]="url" height="200"> <br/>
+                    <input type='file'class="button button2"  id="file" name="xray" (change)="onSelectFile($event.target.files)">
+                    <input type="submit" class="button button2" (click)="resultWindow()">
+                    </form>   
+        </div>
+</div>
+
+    <!--RESULTS PAGE !-->
+
+<div *ngIf="registerView == 'resultView'">
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+
+    <mat-toolbar style="height: 95px;"><img src="https://i.ibb.co/GsMgSp2/logo1.png" style="margin:auto;height:80px">
+        <button class="button button2" (click)="goProfile()" style="margin:auto;">Go Back</button>
+        
+        <button class="button button2" onclick="window.location.href='/home'" style="margin:auto;">Home</button></mat-toolbar>
+        
+        <div class="card-container" >
+        <div class="card" style="border-radius: 4px;
         border: 1px solid #eee;
         background-color: #fafafa;
-        height: 70%;
-        width: 70%;
+        height: 400px;
+        width: 400px;
         margin: 0 8px 16px;
         padding: 16px;
         display: flex;
@@ -14,16 +54,72 @@
         justify-content: center;
         align-items: center;
         transition: all 0.2s ease-in-out;
-        line-height: 24px;
-        margin:auto;">
-        
-    <h1>Upload your XRay file </h1>
-    Please choose your x ray file to be uploaded.
-    Please upload the file in .JPG, .PNG or .JPEG .
-    <br><br>
-        <form method="GET">
-            <img [src]="url" height="200"> <br/>
-          <input type='file'class="button button2"  id="file" name="xray" (change)="onSelectFile($event)">
-          <input type="submit" class="button button2" onclick="window.location.href='/home'">
-          </form>   
+        line-height: 24px;">
+        <img [src]="url" height="300"><br>
+            <-- -Your X-Ray - -->
+    
+    
+        </div>
+        <div class="card" style="border-radius: 4px;
+        border: 1px solid #eee;
+        background-color: #fafafa;
+        height: 400px;
+        width: 400px;
+        margin: 0 8px 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+        line-height: 24px;">
+        <i class="fa fa-check" style="font-size:36px"></i>
+    <h2>Results</h2>
+    <table style="border: 1px solid black;width:300px;text-align: center;height:300px">
+    <tr>
+        <td>
+            Atelectasis
+        </td>
+        <td>
+            {{ predictionData.atelectasis }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Cardiomegaly
+        </td>
+        <td>
+            {{ predictionData.cardiomegaly }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Consolidation
+        </td>
+        <td>
+            {{ predictionData.consolidation }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Edema
+        </td>
+        <td>
+            {{ predictionData.edema }}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Pleural Effusion
+        </td>
+        <td>
+            {{ predictionData.pleural_effusion }}
+        </td>
+    </tr>
+    
+    
+    </table>
+    
+        </div>
     </div>
+</div>

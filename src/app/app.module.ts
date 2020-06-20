@@ -44,7 +44,7 @@ import { UserService } from './user.service';
     MatToolbarModule,HttpClientModule,
     RouterModule.forRoot([
       {path:'home',component:HomeComponent},
-      {path:'upload',component:UploadpageComponent},
+      {path:'users/:userId/upload',component:UploadpageComponent},
       {path:'result', component:ResultspageComponent},
       {path:'login',component:LoginComponent},
       {path:'register',component:RegisterComponent},

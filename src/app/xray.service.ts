@@ -21,4 +21,13 @@ export class XrayService {
         };
         return this.http.post('http://127.0.0.1:8000/api/chexray/xray/', xraydata, httpOptions);
     }
+
+    uploadXRay(tokenkey, formData): Observable<any> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+            'Authorization': `Token ${tokenkey}`,
+            })
+        };
+        return this.http.post('http://127.0.0.1:8000/api/chexray/upload/', formData, httpOptions);
+    }
 }

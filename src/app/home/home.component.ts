@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { TokenManager } from '../tokenmanager.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +11,20 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private tokenManager : TokenManager,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  clickLogin(){
+    if(this.tokenManager.retrieveToken().token != ""){
+      this.router.navigate(['/users', this.tokenManager.retrieveToken().userid]);
+    }
+    else{
+      this.router.navigate(['/login']);
+    }
+  }
 }

@@ -1,8 +1,8 @@
 
 <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
 <mat-toolbar style="height: 95px;"><img src="https://i.ibb.co/GsMgSp2/logo1.png" style="margin:auto;height:80px">
-    <button class="button button2" style="margin:auto;" onclick="window.location.href='/upload'">Upload XRay</button>
-    <button class="button button2" style="margin:auto;" onclick="window.location.href='/login'">Login</button><button class="button button2" style="margin:auto;" onclick="window.location.href='/register'">Sign Up</button></mat-toolbar>
+    <button class="button button2" style="margin:auto;" onclick="window.location.href='/anonupload'">Upload XRay Anonymously</button>
+    <button class="button button2" style="margin:auto;" (click)="clickLogin()">Login</button><button class="button button2" style="margin:auto;" onclick="window.location.href='/register'">Sign Up</button></mat-toolbar>
   <div class="card-container">
     <div class="card" style="width: 500px;height:300px;padding:0px;margin-top:10px;" >
      
@@ -59,7 +59,7 @@ This tool will be able to detect as many as 5 common thoracic diseases.
     We have created an easy to use interface for the diagnosis.<br>
     All you have to do is upload a picture of your X Ray File in PNG, JPEG or JPG format, After which you will be redirected to the diagnostic results page.
 <br><br>
-<button class="button button2" onclick="window.location.href='/upload'">Upload XRay</button>
+<button class="button button2" onclick="window.location.href='/anonupload'">Upload XRay</button>
  
 </div>
 <div class="card" style="width: 500px;border-radius: 4px;

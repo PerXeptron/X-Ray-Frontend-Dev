@@ -61,8 +61,8 @@ export class UploadpageComponent implements OnInit {
     }
   }
   gohome(){
-    this.router.navigate(['/']);
-}
+    this.router.navigate(['']);
+  }
 
   resultWindow(){
     let formData = new FormData(); 

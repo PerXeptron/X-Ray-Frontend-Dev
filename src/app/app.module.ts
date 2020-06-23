@@ -39,7 +39,7 @@ import { AnonuploadComponent } from './anonupload/anonupload.component';
     BrowserAnimationsModule,
     MatToolbarModule,HttpClientModule,
     RouterModule.forRoot([
-      {path:'home',component:HomeComponent},
+      {path:'',component:HomeComponent},
       {path:'anonupload',component:AnonuploadComponent},
       {path:'users/:userId/upload',component:UploadpageComponent},
       {path:'login',component:LoginComponent},

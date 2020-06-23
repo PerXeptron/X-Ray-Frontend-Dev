@@ -70,6 +70,6 @@ export class ProfileComponent implements OnInit {
 
   logout(){
     this.tokenManager.destroyToken();
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 }

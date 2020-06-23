@@ -18,7 +18,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  anon(){
+    this.router.navigate(['/anonupload']);
+  }
+  goreg(){
+    this.router.navigate(['/register']);
+  }
   clickLogin(){
     if(this.tokenManager.retrieveToken().token != ""){
       this.router.navigate(['/users', this.tokenManager.retrieveToken().userid]);

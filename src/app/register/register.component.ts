@@ -24,7 +24,12 @@ export class RegisterComponent implements OnInit {
       password2: '',
     };
   }
-
+  gohome(){
+    this.router.navigate(['/']);
+}
+anon(){
+  this.router.navigate(['/anonupload']);
+}
   registerNewUser(){
     this.userService.registerUser(this.register).subscribe(
       response => {

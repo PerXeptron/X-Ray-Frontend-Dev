@@ -26,10 +26,16 @@ export class RegisterComponent implements OnInit {
   }
   gohome(){
     this.router.navigate(['/']);
-}
-anon(){
-  this.router.navigate(['/anonupload']);
-}
+  }
+
+  anon(){
+    this.router.navigate(['/anonupload']);
+  }
+
+  clickLogin(){
+    this.router.navigate(['/login']);
+  }
+
   registerNewUser(){
     this.userService.registerUser(this.register).subscribe(
       response => {

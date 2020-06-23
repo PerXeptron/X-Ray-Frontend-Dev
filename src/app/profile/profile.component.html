@@ -5,8 +5,9 @@
 
 <mat-toolbar style="height: 95px;"><img src="https://i.ibb.co/GsMgSp2/logo1.png" style="margin:auto;height:80px">
     <button class="button button2" (click) = "uploadWindow()" style="margin:auto;">Upload</button>
-    <button class="button button2" (click)="logout()"  style="margin:auto;">Logout</button></mat-toolbar>
-    <div class="card-contaiiner"><div class="card" style="border-radius: 4px;
+    <button class="button button2" (click)="logout()"  style="margin:auto;">Logout</button>
+</mat-toolbar>
+    <div class="card-container"><div class="card" style="border-radius: 4px;
     border: 1px solid #eee;
     background-color: #fafafa;
     height: 300px;
@@ -40,7 +41,7 @@
     line-height: 20px;">
     <!--URL FOR ACCESSING IMAGES : "{{'http://127.0.0.1:8000' + pastxraydetails[i].image }}"-->
     <img src= "{{'http://127.0.0.1:8000' + xray.image }}" width="150" height="150" style="float:right">
-   <p style="font-size:16px"><table style="border: 1px solid black;width:150px;text-align: center;height:300px">
+   <p style="font-size:16px"><table style="border: 1px solid black;width:300px;text-align: center;height:125px">
     <tr>
         <td>
             Atelectasis
@@ -84,9 +85,6 @@
     
     
     </table>
-    
-
-   </p>
     </div>
 </div>
 

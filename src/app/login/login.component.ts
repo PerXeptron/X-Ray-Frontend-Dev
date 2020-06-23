@@ -25,7 +25,12 @@ export class LoginComponent implements OnInit {
       password: '',
     };
   }
-
+  gohome(){
+    this.router.navigate(['']);
+  }
+  goreg(){
+    this.router.navigate(['/register']);
+  }
   loginNewUser(){
     this.userService.loginUser(this.input).subscribe(
         response => {

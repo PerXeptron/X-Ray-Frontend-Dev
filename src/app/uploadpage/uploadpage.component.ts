@@ -60,6 +60,9 @@ export class UploadpageComponent implements OnInit {
       console.log(this.fileToUpload);
     }
   }
+  gohome(){
+    this.router.navigate(['']);
+  }
 
   resultWindow(){
     let formData = new FormData(); 

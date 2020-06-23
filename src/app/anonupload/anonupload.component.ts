@@ -61,5 +61,9 @@ export class AnonuploadComponent implements OnInit {
         error => {console.log('error', error)}
       );
     }
+
+    gohome(){
+      this.router.navigate(['']);
+    }
   
 }

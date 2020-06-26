@@ -39,9 +39,10 @@
     <mat-toolbar style="height: 95px;"><img src="https://i.ibb.co/GsMgSp2/logo1.png" style="margin:auto;height:80px">
         <button class="button button2" (click)="goProfile()" style="margin:auto;">Go Back</button>
         
-        <button class="button button2" (click)="gohome()" style="margin:auto;">Home</button></mat-toolbar>
+        <button class="button button2" (click)="gohome()" style="margin:auto;">Home</button>
+    </mat-toolbar>
         
-        <div class="card-container" >
+    <div class="card-container" >
         <div class="card" style="border-radius: 4px;
         border: 1px solid #eee;
         background-color: #fafafa;
@@ -55,11 +56,10 @@
         align-items: center;
         transition: all 0.2s ease-in-out;
         line-height: 24px;">
-        <img [src]="url" height="300"><br>
-            <-- -Your X-Ray - -->
-    
-    
+        <img [src]="url" height="300" width="300"><br>
+            <-- -Your X-Ray - -->   
         </div>
+
         <div class="card" style="border-radius: 4px;
         border: 1px solid #eee;
         background-color: #fafafa;
@@ -74,6 +74,7 @@
         transition: all 0.2s ease-in-out;
         line-height: 24px;">
         <i class="fa fa-check" style="font-size:36px"></i>
+
     <h2>Results</h2>
     <table style="border: 1px solid black;width:300px;text-align: center;height:300px">
     <tr>
@@ -115,11 +116,26 @@
         <td>
             {{ predictionData.pleural_effusion }}
         </td>
-    </tr>
-    
-    
+    </tr>   
     </table>
     
+        </div>
+
+        <div class="card" style="border-radius: 4px;
+        border: 1px solid #eee;
+        background-color: #fafafa;
+        height: 400px;
+        width: 400px;
+        margin: 0 8px 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+        line-height: 24px;">
+        <img src="{{'http://127.0.0.1:8000' + predictionData.heatmap_image }}" height="300"><br>
+            <-- -Heatmap Localization Of XRay - -->
         </div>
     </div>
 </div>

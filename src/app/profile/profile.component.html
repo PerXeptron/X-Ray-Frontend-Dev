@@ -11,7 +11,7 @@
     border: 1px solid #eee;
     background-color: #fafafa;
     height: 300px;
-    width: 1000px;
+    width: 1230px;
     margin: 0 8px 16px;
     float:left;
     padding: 16px;
@@ -26,28 +26,47 @@
 <div class="card-container">
     
 <div class="Users" *ngFor="let xray of pastxraydetails">
-    <div class="card" style="border-radius: 4px;
-    border: 1px solid #eee;
-    background-color: #fafafa;
-    height: 200px;
-    width: 1000px;
-    margin: 0 8px 16px;
-    padding: 16px;
-    display: block;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-    transition: all 0.2s ease-in-out;
-    line-height: 20px;">
-    <!--URL FOR ACCESSING IMAGES : "{{'http://127.0.0.1:8000' + pastxraydetails[i].image }}"-->
-    <img src= "{{'http://127.0.0.1:8000' + xray.image }}" width="150" height="150" style="float:right">
-   <p style="font-size:16px"><table style="border: 1px solid black;width:300px;text-align: center;height:125px">
+    <div class="card-container" >
+        <div class="card" style="border-radius: 4px;
+        border: 1px solid #eee;
+        background-color: #fafafa;
+        height: 400px;
+        width: 400px;
+        margin: 0 8px 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+        line-height: 24px;">
+        <img src="{{'http://127.0.0.1:8000' + xray.image }}" height="300" width="300"><br>
+            <-- -Your X-Ray - -->   
+        </div>
+
+        <div class="card" style="border-radius: 4px;
+        border: 1px solid #eee;
+        background-color: #fafafa;
+        height: 400px;
+        width: 400px;
+        margin: 0 8px 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+        line-height: 24px;">
+        <i class="fa fa-check" style="font-size:36px"></i>
+
+    <h2>Results</h2>
+    <table style="border: 1px solid black;width:300px;text-align: center;height:300px">
     <tr>
         <td>
             Atelectasis
         </td>
         <td>
-            {{xray.atelectasis}}
+            {{ xray.atelectasis }}
         </td>
     </tr>
     <tr>
@@ -55,7 +74,7 @@
             Cardiomegaly
         </td>
         <td>
-            {{xray.cardiomegaly}}
+            {{ xray.cardiomegaly }}
         </td>
     </tr>
     <tr>
@@ -63,7 +82,7 @@
             Consolidation
         </td>
         <td>
-            {{xray.consolidation}}
+            {{ xray.consolidation }}
         </td>
     </tr>
     <tr>
@@ -71,20 +90,37 @@
             Edema
         </td>
         <td>
-            {{xray.edema}}
+            {{ xray.edema }}
         </td>
     </tr>
     <tr>
         <td>
-            Pleural effusion
+            Pleural Effusion
         </td>
         <td>
-            {{xray.pleural_effusion}}
+            {{ xray.pleural_effusion }}
         </td>
-    </tr>
-    
-    
+    </tr>   
     </table>
+    
+        </div>
+
+        <div class="card" style="border-radius: 4px;
+        border: 1px solid #eee;
+        background-color: #fafafa;
+        height: 400px;
+        width: 400px;
+        margin: 0 8px 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+        line-height: 24px;">
+        <img src="{{'http://127.0.0.1:8000' + xray.heatmap_image }}" height="300"><br>
+            <-- -Heatmap Localization Of XRay - -->
+        </div>
     </div>
 </div>
 
